@@ -8,8 +8,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Home Screen')),
+    return Scaffold(
+      body: const Center(child: Text('Home Screen')),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            // TODO: prompt user to add workout
+          }),
     );
   }
 }
