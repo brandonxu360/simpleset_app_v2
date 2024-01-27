@@ -20,16 +20,21 @@ class MyExtendedButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                borderRadius: BorderRadius.circular(12)),
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 35),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text(label), const SizedBox(width: 10), icon]),
+        Material(
+          borderRadius: BorderRadius.circular(12),
+          color: Theme.of(context).colorScheme.primaryContainer,
+          child: InkWell(
+            customBorder:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            onTap: () {},
+            child: Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(12)),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text(label), const SizedBox(width: 10), icon]),
+            ),
           ),
         ),
       ],

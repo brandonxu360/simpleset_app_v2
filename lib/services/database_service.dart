@@ -26,8 +26,8 @@ class DatabaseService {
 
   // CREATE ::: add new Workout to Workout collection
   Future<void> addWorkout(Workout workout) async {
-    await _isar.writeTxn(() async {
-      await _isar.workouts.put(workout);
+    _isar.writeTxnSync(() {
+      _isar.workouts.putSync(workout);
     });
   }
 }
