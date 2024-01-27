@@ -19,6 +19,7 @@ class DatabaseService {
       // Create new Isar instance
       _isar = await Isar.open([WorkoutSchema], directory: dir.path);
     } else {
+      // Get current Isar instance if it already exists
       _isar = Isar.getInstance()!;
     }
   }

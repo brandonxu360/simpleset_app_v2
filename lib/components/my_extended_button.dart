@@ -27,10 +27,9 @@ class MyExtendedButton extends StatelessWidget {
                 color: Theme.of(context).colorScheme.primaryContainer,
                 borderRadius: BorderRadius.circular(12)),
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 35),
-            margin: const EdgeInsets.only(left: 10),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [icon, Text(label)]),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text(label), const SizedBox(width: 10), icon]),
           ),
         ),
       ],
