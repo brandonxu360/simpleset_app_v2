@@ -12,11 +12,14 @@ class DatabaseService {
   }
 
   // Initialize database
-  void initDB() async {
+  Future<void> initDB() async {
+    // Only create a new Isar instance if an instance does not already exist in the current isolate
     if (Isar.instanceNames.isEmpty) {
       final dir = await getApplicationCacheDirectory();
       // Create new Isar instance
       _isar = await Isar.open([WorkoutSchema], directory: dir.path);
+    } else {
+      _isar = Isar.getInstance()!;
     }
   }
 
