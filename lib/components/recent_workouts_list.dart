@@ -23,6 +23,9 @@ class RecentWorkoutsList extends StatelessWidget {
 
         List<Workout> workoutList = snapshot.data ?? [];
 
+        // Sort the workoutList based on the workout dates (Latest, first; Earliest, last)
+        workoutList.sort((a, b) => b.dateTime.compareTo(a.dateTime));
+
         if (workoutList.isEmpty) {
           // Show a placeholder when there are no workouts
           return const Center(
