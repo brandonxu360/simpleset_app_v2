@@ -59,7 +59,7 @@ class _AppWrapperState extends State<AppWrapper> {
             activeColor: Theme.of(context).colorScheme.inversePrimary,
             tabs: [
               GButton(
-                icon: Icons.home,
+                icon: Icons.home_rounded,
                 text: 'Home',
                 onPressed: () {
                   setState(() {
@@ -68,7 +68,7 @@ class _AppWrapperState extends State<AppWrapper> {
                 },
               ),
               GButton(
-                icon: Icons.search,
+                icon: Icons.search_rounded,
                 text: 'Search',
                 onPressed: () {
                   setState(() {
@@ -77,7 +77,7 @@ class _AppWrapperState extends State<AppWrapper> {
                 },
               ),
               GButton(
-                  icon: Icons.auto_graph_rounded,
+                  icon: Icons.bar_chart_rounded,
                   text: 'Analytics',
                   onPressed: () => {
                         setState(() {
