@@ -15,6 +15,12 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
+            const SizedBox(height: 10),
+            const Center(
+              child: Text('S I M P L E S E T',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
+            ),
+            const SizedBox(height: 20),
             const MyHeatMap(),
             const SizedBox(height: 20),
             const Padding(

@@ -26,27 +26,9 @@ class _AppWrapperState extends State<AppWrapper> {
     const AnalyticsScreen()
   ];
 
-  // Custom app bars for top (using simple text widgets for now)
-  List<Widget> getAppBars() {
-    return const [
-      Text('S I M P L E S E T',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
-      Text('S E A R C H',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
-      Text('A N A L Y T I C S',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
-    ];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: getAppBars()[screenIndex],
-        backgroundColor: Colors.transparent,
-      ),
-
       // Indexed stack used so that the state of the pages is maintained
       body: IndexedStack(
         index: screenIndex,
