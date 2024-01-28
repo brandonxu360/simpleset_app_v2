@@ -50,6 +50,7 @@ class NewWorkoutScreen extends StatelessWidget {
                       child: Text('Workout Name')),
                   TextFormField(
                     decoration: InputDecoration(
+                        hintText: 'My Amazing Workout',
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12)),
                         enabledBorder: OutlineInputBorder(
