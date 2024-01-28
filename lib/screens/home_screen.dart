@@ -11,10 +11,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-        const SizedBox(height: 20),
-        MyHeatMap(dateTimes: {DateTime(2024, 1, 1), DateTime(2024, 1, 7)})
-      ]),
+      body: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          children: [
+            MyHeatMap(dateTimes: {DateTime(2024, 1, 1), DateTime(2024, 1, 7)}),
+            const SizedBox(height: 20),
+            const Text(
+              'Routines',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
+            )
+          ]),
 
       // Navigate to new workout screen - landing page for starting new workouts
       floatingActionButton: FloatingActionButton.extended(

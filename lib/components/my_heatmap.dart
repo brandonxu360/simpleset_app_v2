@@ -17,26 +17,23 @@ class MyHeatMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: HeatMap(
-        datasets: datetimeToDataset(dateTimes),
-        colorMode: ColorMode.color,
-        defaultColor: Colors.grey[200],
-        showColorTip: false,
-        showText: false,
-        scrollable: true,
-        size: 25,
-        startDate: DateTime.now().subtract(const Duration(days: 76)),
-        endDate: DateTime.now(),
-        colorsets: const {
-          1: Color.fromARGB(140, 2, 179, 8),
-        },
-        onClick: (value) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(value.toString())));
-        },
-      ),
+    return HeatMap(
+      datasets: datetimeToDataset(dateTimes),
+      colorMode: ColorMode.color,
+      defaultColor: Colors.grey[200],
+      showColorTip: false,
+      showText: false,
+      scrollable: true,
+      size: 25,
+      startDate: DateTime.now().subtract(const Duration(days: 76)),
+      endDate: DateTime.now(),
+      colorsets: const {
+        1: Color.fromARGB(140, 2, 179, 8),
+      },
+      onClick: (value) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(value.toString())));
+      },
     );
   }
 }
