@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simpleset_app_v2/components/my_heatmap.dart';
 import 'package:simpleset_app_v2/screens/new_workout_screen.dart';
 
 /*
@@ -10,7 +11,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(child: Text('Home Screen')),
+      body: ListView(children: [
+        const SizedBox(height: 20),
+        MyHeatMap(dateTimes: {DateTime(2024, 1, 1), DateTime(2024, 1, 7)})
+      ]),
 
       // Navigate to new workout screen - landing page for starting new workouts
       floatingActionButton: FloatingActionButton(
