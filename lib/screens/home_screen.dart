@@ -17,8 +17,11 @@ class HomeScreen extends StatelessWidget {
       ]),
 
       // Navigate to new workout screen - landing page for starting new workouts
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
+          icon: const Icon(Icons.add),
+          label: const Text(
+            'Start Session',
+          ),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => NewWorkoutScreen()));
