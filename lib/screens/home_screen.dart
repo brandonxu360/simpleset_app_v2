@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
-            MyHeatMap(dateTimes: {DateTime(2024, 1, 1), DateTime(2024, 1, 7)}),
+            const MyHeatMap(),
             const SizedBox(height: 20),
             const Padding(
               padding: EdgeInsets.only(left: 10),
