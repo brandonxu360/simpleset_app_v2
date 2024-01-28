@@ -32,10 +32,18 @@ class DatabaseService {
     });
   }
 
-  // Create a stream for workouts
+  // Return a stream to watch the query for workouts in the date-range input
   Stream<List<Workout>> watchWorkoutsInDateTimeRange(
       DateTime start, DateTime end) async* {
     await initDB();
+    // Fetch initial data
+    final initialData =
+        await _isar!.workouts.where().dateTimeBetween(start, end).findAll();
+
+    // Yield initial data
+    yield initialData;
+
+    // Yield changes to data
     yield* _isar!.workouts.where().dateTimeBetween(start, end).watch();
   }
 }
