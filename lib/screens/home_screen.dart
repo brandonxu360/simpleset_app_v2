@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simpleset_app_v2/components/my_heatmap.dart';
+import 'package:simpleset_app_v2/components/recent_workouts_list.dart';
 import 'package:simpleset_app_v2/screens/new_workout_screen.dart';
 
 /*
@@ -16,10 +17,14 @@ class HomeScreen extends StatelessWidget {
           children: [
             MyHeatMap(dateTimes: {DateTime(2024, 1, 1), DateTime(2024, 1, 7)}),
             const SizedBox(height: 20),
-            const Text(
-              'Routines',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
-            )
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                'Recent Workouts',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+              ),
+            ),
+            RecentWorkoutsList()
           ]),
 
       // Navigate to new workout screen - landing page for starting new workouts

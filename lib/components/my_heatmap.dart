@@ -6,6 +6,7 @@ import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
   PARAM :: datasets - give the DateTimes where where at least one workout was recorded in the last 60 days
 */
 class MyHeatMap extends StatelessWidget {
+  // Days where a workout was recorded
   final Iterable<DateTime> dateTimes;
 
   const MyHeatMap({super.key, required this.dateTimes});

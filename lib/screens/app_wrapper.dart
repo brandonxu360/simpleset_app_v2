@@ -27,18 +27,23 @@ class _AppWrapperState extends State<AppWrapper> {
   ];
 
   // Custom app bars for top (using simple text widgets for now)
-  final appBars = const [
-    Text('S I M P L E S E T'),
-    Text('S E A R C H'),
-    Text('A N A L Y T I C S')
-  ];
+  List<Widget> getAppBars() {
+    return const [
+      Text('S I M P L E S E T',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
+      Text('S E A R C H',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
+      Text('A N A L Y T I C S',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: appBars[screenIndex],
+        title: getAppBars()[screenIndex],
         backgroundColor: Colors.transparent,
       ),
 
