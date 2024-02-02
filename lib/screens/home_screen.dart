@@ -40,8 +40,10 @@ class HomeScreen extends StatelessWidget {
             'Start Session',
           ),
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => NewWorkoutScreen()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NewWorkoutScreen()));
           }),
     );
   }

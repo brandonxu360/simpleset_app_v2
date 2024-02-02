@@ -26,7 +26,7 @@ class MyExtendedButton extends StatelessWidget {
           child: InkWell(
             customBorder:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(12)),
