@@ -11,8 +11,18 @@ class WorkoutData extends ChangeNotifier {
   String _workoutName = 'Default Name';
   String get workoutName => _workoutName;
 
+  // Date attribute - set to the time of the provider instantiation as default
+  DateTime _dateTime = DateTime.now();
+  DateTime get dateTime => _dateTime;
+
   void setName(String name) {
     _workoutName = name;
+
+    notifyListeners();
+  }
+
+  void setDateTime(DateTime dateTime) {
+    _dateTime = dateTime;
 
     notifyListeners();
   }

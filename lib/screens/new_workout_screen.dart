@@ -44,12 +44,10 @@ class NewWorkoutScreen extends StatelessWidget {
                     "Let's get started!",
                     style: TextStyle(fontSize: 30),
                   ),
-                  const SizedBox(height: 50),
                   const Image(
-                    image: AssetImage('lib/assets/images/weight_room.png'),
+                    image: AssetImage('lib/assets/images/dumbell-transp.png'),
                     width: 260,
                   ),
-                  const SizedBox(height: 50),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
