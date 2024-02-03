@@ -5,7 +5,7 @@ import 'package:simpleset_app_v2/models/workout.dart';
 // Provide CRUD operations and additional services for Isar database
 class DatabaseService {
   // Instance of Isar
-  late final Isar _isar;
+  Isar? _isar;
 
   DatabaseService() {
     initDB();
@@ -26,8 +26,24 @@ class DatabaseService {
 
   // CREATE ::: add new Workout to Workout collection
   Future<void> addWorkout(Workout workout) async {
-    _isar.writeTxnSync(() {
-      _isar.workouts.putSync(workout);
+    await initDB();
+    _isar!.writeTxnSync(() {
+      _isar!.workouts.putSync(workout);
     });
+  }
+
+  // Return a stream to watch the query for workouts in the date-range input
+  Stream<List<Workout>> watchWorkoutsInDateTimeRange(
+      DateTime start, DateTime end) async* {
+    await initDB();
+    // Fetch initial data
+    final initialData =
+        await _isar!.workouts.where().dateTimeBetween(start, end).findAll();
+
+    // Yield initial data
+    yield initialData;
+
+    // Yield changes to data
+    yield* _isar!.workouts.where().dateTimeBetween(start, end).watch();
   }
 }

@@ -9,10 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_heatmap_calendar: ^1.0.5
   google_nav_bar: ^5.0.6
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
   path_provider: ^2.1.2
+  provider: ^6.1.1
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +27,9 @@ flutter:
   uses-material-design: true
   assets:
     - lib/assets/images/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: lib/assets/fonts/Roboto-Light.ttf
+        - asset: lib/assets/fonts/Roboto-Regular.ttf
+        - asset: lib/assets/fonts/Roboto-Medium.ttf
