@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simpleset_app_v2/screens/app_wrapper.dart';
+import 'package:simpleset_app_v2/utils/theme/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,7 +11,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: AppWrapper());
+    return MaterialApp(
+        theme: lightMode,
+        darkTheme: darkMode,
+        debugShowCheckedModeBanner: false,
+        home: const AppWrapper());
   }
 }

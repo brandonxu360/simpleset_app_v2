@@ -37,13 +37,16 @@ class _AppWrapperState extends State<AppWrapper> {
 
       // Use of container around GNav navigation bar to space navigation bar away from bottom of screen while maintaining continuity in color
       bottomNavigationBar: Container(
-        color: Theme.of(context).colorScheme.primary,
+        decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            border: Border(
+                top: BorderSide(
+                    width: 0.5, color: Theme.of(context).colorScheme.outline))),
         padding: const EdgeInsets.symmetric(horizontal: 5),
         // Imported GNav bottom navigation bar
         child: GNav(
             gap: 8,
             backgroundColor: Theme.of(context).colorScheme.primary,
-            activeColor: Theme.of(context).colorScheme.inversePrimary,
             tabs: [
               GButton(
                 icon: Icons.home_rounded,

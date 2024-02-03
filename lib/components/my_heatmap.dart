@@ -29,7 +29,7 @@ class MyHeatMap extends StatelessWidget {
       startDate: startDate,
       endDate: endDate,
       colorsets: const {
-        1: Color.fromARGB(140, 2, 179, 8),
+        1: Color.fromARGB(138, 2, 179, 8),
       },
       onClick: (value) {
         ScaffoldMessenger.of(context)

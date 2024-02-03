@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             const Center(
               child: Text('S I M P L E S E T',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400)),
@@ -54,12 +54,13 @@ class HomeScreen extends StatelessWidget {
                     endDate: DateTime.now(),
                   );
                 }),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             const Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
                 'Recent Workouts',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+                style: TextStyle(
+                    fontSize: 25, fontWeight: FontWeight.w400, height: 1.0),
               ),
             ),
 
@@ -83,8 +84,20 @@ class HomeScreen extends StatelessWidget {
 
       // Navigate to new workout screen - landing page for starting new workouts
       floatingActionButton: FloatingActionButton.extended(
-          icon: const Icon(Icons.add),
-          label: const Text(
+          shape: RoundedRectangleBorder(
+              side: BorderSide(
+                  width: 0.5, color: Theme.of(context).colorScheme.outline),
+              borderRadius: BorderRadius.circular(12)),
+          elevation: 0,
+          highlightElevation: 0,
+          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          icon: Icon(
+            Icons.add,
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
+          label: Text(
+            style:
+                TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
             'Start Session',
           ),
           onPressed: () {

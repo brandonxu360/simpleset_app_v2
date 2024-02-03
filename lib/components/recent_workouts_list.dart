@@ -11,6 +11,7 @@ class RecentWorkoutsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (workoutList.isEmpty) {
+
       // Show a placeholder when there are no workouts
       return const Center(
         child: Padding(
@@ -20,6 +21,7 @@ class RecentWorkoutsList extends StatelessWidget {
       );
     }
 
+    // Build the list of workouts
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
