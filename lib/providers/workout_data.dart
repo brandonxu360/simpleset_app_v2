@@ -17,7 +17,7 @@ class WorkoutData extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Reset data for next workout
+  // Reset data
   void clearData() {
     _workoutName = '';
   }
